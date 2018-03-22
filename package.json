@@ -1,0 +1,26 @@
+{
+  "name": "koa-app-starter",
+  "description"  : "An app starter with node, koa, annotations, routes, injections and many more",
+  "version": "0.0.1",
+  "keywords": [
+    "app",
+    "starter",
+    "node",
+    "koa",
+    "annotations",
+    "routes",
+    "injections"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "StringScanner": "0.0.3",
+    "app-module-path": "^2.2.0",
+    "colors": "^1.2.1",
+    "glob": "^7.1.2",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-static": "^4.0.2",
+    "lodash": "^4.17.5",
+    "path-to-regexp": "^2.2.0"
+  }
+}
