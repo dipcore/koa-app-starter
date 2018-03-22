@@ -4,7 +4,7 @@
  * File Created: Monday, 19th March 2018 10:07:07 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
  * -----
- * Last Modified: Thursday, 22nd March 2018 12:29:20 pm
+ * Last Modified: Thursday, 22nd March 2018 2:41:43 pm
  * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
@@ -16,9 +16,6 @@ const sarray = require('base/lib/sarray');
 
 const Annotation = require('base/Annotation');
 const Route = require('base/Route');
-//const Throw = require('base/Throw');
-
-//const route = require('koa-route');
 
 const Log = require('base/Log');
 const TAG = 'RouteAnnotation';
