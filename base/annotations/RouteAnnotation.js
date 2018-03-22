@@ -4,7 +4,7 @@
  * File Created: Monday, 19th March 2018 10:07:07 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
  * -----
- * Last Modified: Thursday, 22nd March 2018 3:42:44 pm
+ * Last Modified: Thursday, 22nd March 2018 5:25:58 pm
  * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
@@ -56,7 +56,7 @@ class RouteAnnotation extends Annotation {
             let method = methods[i];
             let url = path.join(basePath, this.path);
 
-            Log.i(TAG, `Path: ${url} Method: ${this.className}.${this.target}`);
+            Log.i(TAG, `Path: ${url} for ${this.className}.${this.target}`);
 
             route.set(this.constructor.weight, async (ctx, next) => {
                 let result = instance[this.target](ctx, next);
