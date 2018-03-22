@@ -4,7 +4,7 @@
  * File Created: Monday, 19th March 2018 10:07:07 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
  * -----
- * Last Modified: Thursday, 22nd March 2018 2:41:43 pm
+ * Last Modified: Thursday, 22nd March 2018 3:42:44 pm
  * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
@@ -67,7 +67,6 @@ class RouteAnnotation extends Annotation {
             app.use(route.use(method, url));
 
             // Store data to be able to re-use it in other route-based annotations
-            targetData.contentType = this.contentType;
             targetData.route = route;
             this.storage.set(this.target, targetData);
         }
