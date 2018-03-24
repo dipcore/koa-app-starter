@@ -1,11 +1,8 @@
 /*
  * File: RoutePreFilterAnnotaion.js
  * Project: koa-app-starter
- * File Created: Wednesday, 21st March 2018 3:48:08 pm
+ * File Created: Thursday, 22nd March 2018 2:15:30 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
- * -----
- * Last Modified: Thursday, 22nd March 2018 12:29:34 pm
- * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */
@@ -49,7 +46,7 @@ class RoutePreFilterAnnotaion extends Annotation {
         Log.i(TAG, `Filter: ${this.filter} Parameters: ${this.parameters} Method: ${this.className}.${this.target}`);
 
         // Load application filter first
-        const filter = srequire(path.resolve(config.filters, this.filter))
+        const filter = srequire(path.resolve(config.path.filters, this.filter))
             || srequire(path.resolve('base/filters', this.filter));
 
         route.set(this.constructor.weight, filter(app, config, this.parameters));

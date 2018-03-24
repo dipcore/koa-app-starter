@@ -1,14 +1,12 @@
 /*
  * File: RoutePostFilterAnnotaion.js
  * Project: koa-app-starter
- * File Created: Wednesday, 21st March 2018 3:48:36 pm
+ * File Created: Thursday, 22nd March 2018 2:15:30 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
- * -----
- * Last Modified: Thursday, 22nd March 2018 12:29:27 pm
- * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */
+
 
 const Annotation = require('base/Annotation');
 const RouteAnnotation = require('base/annotations/RouteAnnotation');

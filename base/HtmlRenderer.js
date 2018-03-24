@@ -1,16 +1,14 @@
 /*
  * File: HtmlRenderer.js
  * Project: koa-app-starter
- * File Created: Thursday, 15th March 2018 11:21:07 pm
+ * File Created: Thursday, 22nd March 2018 2:15:30 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
- * -----
- * Last Modified: Thursday, 22nd March 2018 12:25:58 pm
- * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */
 
- const _ = require('lodash');
+
+const _ = require('lodash');
 const swig = require('swig-templates');
 const path = require('path');
 

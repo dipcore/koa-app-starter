@@ -1,14 +1,12 @@
 /*
  * File: Route.js
  * Project: koa-app-starter
- * File Created: Wednesday, 21st March 2018 11:23:14 am
+ * File Created: Thursday, 22nd March 2018 2:15:30 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
- * -----
- * Last Modified: Thursday, 22nd March 2018 12:26:48 pm
- * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */
+
 
 const _ = require('lodash');
 const pathToRegexp = require('path-to-regexp');

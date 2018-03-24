@@ -1,0 +1,12 @@
+{
+    "path": {
+        "config": "application/config",
+        "public": "application/public",
+        "annotations": "application/annotations",
+        "filters": "application/filters",
+        "controllers": "application/controllers",
+        "models": "application/models",
+        "services": "application/services",
+        "engines": "application/engines"
+    }
+}

@@ -1,14 +1,13 @@
 /*
  * File: Bootstrap.js
  * Project: koa-app-starter
- * File Created: Monday, 19th March 2018 3:37:40 pm
+ * File Created: Thursday, 22nd March 2018 2:15:30 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
- * -----
- * Last Modified: Thursday, 22nd March 2018 12:33:01 pm
- * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */
+
+
 
 const path = require('path');
 const glob = require('glob');
@@ -32,7 +31,7 @@ class Bootstrap {
 
     registerAnnotations() {
         let baseAnnotations = this.getFileList('base/annotations');
-        let applicationAnnotations = this.getFileList(this.config.annotations);
+        let applicationAnnotations = this.getFileList(this.config.path.annotations);
         this.annotations = [].concat(baseAnnotations).concat(applicationAnnotations);
         this.registry = new Registry();
         for (let i = 0; i < this.annotations.length; i++) {
@@ -100,9 +99,9 @@ class Bootstrap {
 
         // Annotations
         this.registerAnnotations();
-        this.parseAnnotations(this.config.services);
-        this.parseAnnotations(this.config.models);        
-        this.parseAnnotations(this.config.controllers);
+        this.parseAnnotations(this.config.path.services);
+        this.parseAnnotations(this.config.path.models);        
+        this.parseAnnotations(this.config.path.controllers);
     }
 
 }

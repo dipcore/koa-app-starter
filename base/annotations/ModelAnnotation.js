@@ -1,11 +1,8 @@
 /*
  * File: ModelAnnotation.js
  * Project: koa-app-starter
- * File Created: Monday, 19th March 2018 11:23:47 pm
+ * File Created: Thursday, 22nd March 2018 2:15:30 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
- * -----
- * Last Modified: Thursday, 22nd March 2018 12:29:12 pm
- * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */
@@ -24,7 +21,7 @@ class ModelAnnotation extends Annotation {
     static get targets() { return [Annotation.CONSTRUCTOR]; }
 
     apply(app, config, instance) {
-        let modelFilePath = path.resolve(config.models, this.value);
+        let modelFilePath = path.resolve(config.path.models, this.value);
         let Model = require(modelFilePath);
         let model = new Model(app, config);
         instance.models = instance.models || {};

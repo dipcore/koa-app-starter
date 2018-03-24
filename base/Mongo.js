@@ -1,11 +1,8 @@
 /*
  * File: Mongo.js
  * Project: koa-app-starter
- * File Created: Friday, 16th March 2018 7:00:35 pm
+ * File Created: Thursday, 22nd March 2018 2:15:30 pm
  * Author: Denys Petrovnin (dipcore@gmail.com)
- * -----
- * Last Modified: Thursday, 22nd March 2018 12:26:28 pm
- * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */

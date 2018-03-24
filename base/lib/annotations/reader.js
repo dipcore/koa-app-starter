@@ -5,7 +5,6 @@
  * Author: Aumard Jimmy <jimmy.aumard@gmail.com>
  * Author: Marc Roulias <marc@lampjunkie.com>
  * -----
- * Last Modified: Thursday, 22nd March 2018 12:36:53 pm
  * Modified By: Denys Petrovnin (dipcore@gmail.com>)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
