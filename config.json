@@ -7,6 +7,6 @@
         "controllers": "application/controllers",
         "models": "application/models",
         "services": "application/services",
-        "engines": "application/engines"
+        "renderers": "application/renderers"
     }
 }
