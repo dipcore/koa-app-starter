@@ -21,8 +21,8 @@ class ModelAnnotation extends Annotation {
     static get targets() { return [Annotation.CONSTRUCTOR]; }
 
     apply(app, config, instance) {
-        let modelFilePath = path.resolve(config.path.models, this.value);
-        let Model = require(modelFilePath);
+        let filePath = path.resolve(config.path.models, this.value);
+        let Model = require(filePath);
         let model = new Model(app, config);
         instance.models = instance.models || {};
         instance.models[model.id] = model;

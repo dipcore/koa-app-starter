@@ -7,10 +7,15 @@
  * MIT License http://www.opensource.org/licenses/MIT
  */
 
+const Log = require('base/Log');
+const TAG = 'srequire';
 
 module.exports = function (path, def) {
     try {
         return require(path);
-    } catch (e) { }
+    } catch (e) { 
+        Log.d(TAG, e.message);
+        Log.d(TAG, e.stack);
+    }
     return def || undefined;
 }

@@ -32,7 +32,7 @@ const TAG = 'Route';
  * ```
  * 
  * ***Where:
- * weight - [integer] Weight of current middleware
+ * weight - [integer] Weight
  * middleware - [function] (ctx, next) => { ... }
  * 
  * Middleware stack is sorted according weight value before applying to the actual route
@@ -73,11 +73,7 @@ class Route extends Map {
         super.set(key, value);
 
         // Sort by key
-        for (const [key, value] of [...this.entries()].sort()) {
-            this.delete(key);
-            super.set(key, value);
-        }
-
+        this.sort((a, b) => a[0] - b[0]);
         return key;
     }
 
@@ -120,6 +116,13 @@ class Route extends Map {
 
     decode(val) {
         if (val) return decodeURIComponent(val);
+    }
+
+    sort(sortFn) {
+        for (const [key, value] of [...super.entries()].sort(sortFn)) {
+            super.delete(key);
+            super.set(key, value);
+        }
     }
 
 }

@@ -9,20 +9,18 @@
 
 
 const { Annotation } = require('base/lib/annotations');
+const Storage = require('base/Storage');
 const Log = require('base/Log');
 const TAG = 'Annotation';
 
+const container = new Storage();
+
 class BaseAnnotation extends Annotation {
-    
+
     static get instantiate() { return true; }
 
-    static get storageKey() {
-        return '$' + this.annotation;
-    }
-
-    get storage() {
-        let key = this.constructor.storageKey;
-        return this.instance[key] = this.instance[key] || new Map();
+    static get storage() {
+        return container;
     }
 
     apply(app, config, obj) {

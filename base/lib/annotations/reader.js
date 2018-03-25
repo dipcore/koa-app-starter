@@ -25,14 +25,6 @@ const Parser = require('./parser')
  */
 module.exports = class Reader {
 
-  static get ES5() {
-    return 1
-  }
-
-  static get ES6() {
-    return 2
-  }
-
   constructor(registry, globalContext) {
     this.registry = registry
     this.parser = new Parser()
@@ -158,7 +150,23 @@ module.exports = class Reader {
       const targets = annotations[i].targets
 
       targets.forEach(function (target) {
-        this.annotationMap[target].push(annotationName);
+        switch (target) {
+          case Annotation.DEFINITION:
+            this.annotationMap.DEFINITION.push(annotationName)
+            break
+
+          case Annotation.CONSTRUCTOR:
+            this.annotationMap.CONSTRUCTOR.push(annotationName)
+            break
+
+          case Annotation.PROPERTY:
+            this.annotationMap.PROPERTY.push(annotationName)
+            break
+
+          case Annotation.METHOD:
+            this.annotationMap.METHOD.push(annotationName)
+            break
+        }
       }.bind(this))
     }
   }

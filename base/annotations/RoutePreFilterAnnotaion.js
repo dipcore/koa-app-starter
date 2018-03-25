@@ -29,9 +29,8 @@ class RoutePreFilterAnnotaion extends Annotation {
     apply(app, config, instance) {
         super.apply(app, config, instance);
 
-        let storage = instance[RouteAnnotation.storageKey];
-        let routeParams = storage.get(this.target);
-        let route = routeParams.route; // Route instance
+        const className = instance.constructor.name;
+        const route = RouteAnnotation.storage.get(className, this.target, 'route');
 
         if (!route) {
             Log.e(TAG, '@Route annotation is required');

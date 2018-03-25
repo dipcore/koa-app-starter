@@ -30,29 +30,29 @@ class RouteAnnotation extends Annotation {
     apply(app, config, instance) {
         super.apply(app, config, instance);
 
-        if (!this.path) {
+        const className = instance.constructor.name;
+        const storage = this.constructor.storage;
+
+        if (!this.value) {
             Log.e(TAG, `Error applying route: ${this.filePath}`);
-            Log.e(TAG, `path argument is required for ${this.className}.${this.target} method`);
+            Log.e(TAG, `path argument is required for ${className}.${this.target} method`);
             return;
         }
 
         // Store basePath for later use, if it's definition
         if (this.type === Annotation.DEFINITION) {
-            this.storage.set('basePath', this.path);
+            storage.set(className, 'basePath', this.value);
             return;
         }
 
-
         let methods = sarray(this.methods || ['all']);
-        let basePath = this.storage.get('basePath') || '/';
-        let targetData = this.storage.get(this.target) || {};
-
-        let route = targetData.route || new Route();
+        let basePath = storage.get(className, 'basePath') || '/';
+        let route = storage.get(className, this.target, 'route') || new Route();
 
         for (let i = 0; i < methods.length; i++) {
 
             let method = methods[i];
-            let url = path.join(basePath, this.path);
+            let url = path.join(basePath, this.value);
 
             Log.i(TAG, `Path: ${url} for ${this.className}.${this.target}`);
 
@@ -65,8 +65,7 @@ class RouteAnnotation extends Annotation {
             app.use(route.use(method, url));
 
             // Store data to be able to re-use it in other route-based annotations
-            targetData.route = route;
-            this.storage.set(this.target, targetData);
+            storage.set(className, this.target, 'route', route);
         }
     }
 }
