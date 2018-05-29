@@ -63,7 +63,7 @@ class Errors {
             this.status = err.status;
 
             this.set(err.headers);
-            err.type = err.type || 'text';
+            err.type = err.type || this.config.defaultErrorType || 'text';
 
             self[err.type].call(self, err, this);
 
