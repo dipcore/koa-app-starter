@@ -26,9 +26,9 @@ class Config {
         if (configs[envConfigPath]) return configs[envConfigPath];
 
         configs[envConfigPath] = { root: process.cwd(), env };
-        _.assign(configs[envConfigPath], baseConfig);
-        _.assign(configs[envConfigPath], srequire(allConfigPath, {}));
-        _.assign(configs[envConfigPath], srequire(envConfigPath, {}));
+        _.merge(configs[envConfigPath], baseConfig);
+        _.merge(configs[envConfigPath], srequire(allConfigPath, {}));
+        _.merge(configs[envConfigPath], srequire(envConfigPath, {}));
         return configs[envConfigPath];
     }
 }
