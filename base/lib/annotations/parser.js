@@ -26,9 +26,10 @@ const Metadata = require('./metadata')
 module.exports = class Parser {
   /**
    * foo(){}
+   * async foo(){}
    */
   static get T_FUNCTION() {
-    return /(\w+)(.*)\((.*)\)/
+    return /(?:async\s|)(\w+)(.*)\((.*)\)/
   }
 
   /**
