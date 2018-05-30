@@ -13,6 +13,7 @@ const path = require('path');
 const glob = require('glob');
 
 const { Registry, Reader } = require('base/lib/annotations');
+const Session = require('base/Session');
 const Errors = require('base/Errors');
 const Log = require('./Log');
 const TAG = 'Bootstrap';
@@ -94,8 +95,14 @@ class Bootstrap {
 
     async run() {
 
+        // Signed cookie keys
+        this.app.keys = this.config.keys;
+
         // Errors
         new Errors(this.app, this.config);
+
+        // Session
+        new Session(this.app, this.config);
 
         // Annotations
         this.registerAnnotations();

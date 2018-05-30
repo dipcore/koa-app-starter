@@ -13,5 +13,13 @@
         "swig": {
             "root": "application/views"
         }
+    },
+    "keys": ["Super Secret nkmrlkPmwioh&H"],
+    "session": {
+        "maxAge": 86400000,
+        "overwrite": true,
+        "httpOnly": true,
+        "signed": true,
+        "renew": true
     }
 }
