@@ -1,11 +1,12 @@
 /*
  * File: Session.js
- * Project: ota.dstudio.ca
- * File Created: Tuesday, 29th May 2018 8:24:12 pm
+ * Project: koa-app-starter
+ * File Created: Wednesday, 30th May 2018 12:28:48 am
  * Author: Denys Petrovnin (dipcore@gmail.com)
  * -----
  * MIT License http://www.opensource.org/licenses/MIT
  */
+
 
 const Storage = require('base/Storage');
 
